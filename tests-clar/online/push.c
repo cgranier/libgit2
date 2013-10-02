@@ -352,12 +352,14 @@ void test_online_push__cleanup(void)
 static void push_pack_progress_cb(int stage, unsigned int current, unsigned int total, void* payload)
 {
 	int *was_called = (int *) payload;
+	GIT_UNUSED(stage); GIT_UNUSED(current); GIT_UNUSED(total);
 	*was_called = 1;
 }
 
 static void push_transfer_progress_cb(unsigned int current, unsigned int total, size_t bytes, void* payload)
 {
 	int *was_called = (int *) payload;
+	GIT_UNUSED(current); GIT_UNUSED(total); GIT_UNUSED(bytes);
 	*was_called = 1;
 }
 
